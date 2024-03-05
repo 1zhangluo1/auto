@@ -1,0 +1,28 @@
+name: Run Script at 15:20 UTC
+
+on:
+  schedule:
+#    - cron: '20 15 * * *'  # 每天 UTC 时间 15:20 执行
+     - cron: '59 13 * * *'
+     - workflow_dispatch:
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x  # 更改为你的 Python 版本
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run Python script
+      run: python3 main.py  # 更改为你的脚本路径
