@@ -4,7 +4,7 @@ on:
   schedule:
 #    - cron: '20 15 * * *'  # 每天 UTC 时间 15:20 执行
      - cron: '59 13 * * *'
-     - workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   run_script:
