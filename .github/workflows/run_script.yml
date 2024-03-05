@@ -2,8 +2,7 @@ name: Run Script at 15:20 UTC
 
 on:
   schedule:
-#    - cron: '20 15 * * *'  # 每天 UTC 时间 15:20 执行
-     - cron: '59 13 * * *'
+    - cron: '20 15 * * *'  # 每天 UTC 时间 15:20 执行
   workflow_dispatch:
 
 jobs:
