@@ -117,7 +117,7 @@ subject = '[科协官方]：举报下线通知'
 
 
 def send_email(receiver):
-    sender_email = "zl643733581@outlook.com"
+    sender_email = 你的邮箱号
 
     # 创建邮件内容
     message = MIMEMultipart()
@@ -133,7 +133,7 @@ def send_email(receiver):
     server.starttls()
 
     # 登录到SMTP服务器
-    server.login(sender_email, "zl486181915")
+    server.login(sender_email, 你的密码)
 
     # 发送邮件
     server.sendmail(sender_email, receiver, message.as_string())
@@ -142,20 +142,7 @@ def send_email(receiver):
     server.quit()
     print("Email sent successfully")
 
-
-# send_email('643733581@qq.com')
-
 def monitor_somebody(id, recevier):
     online = find_target_is_online(id)
     if online:
         send_email(recevier)
-
-
-# monitor_somebody(2300320225,'930837329@qq.com')
-
-# body111 = {'name': '莫楚楚',
-#            'password': '123456789',
-#            'age': 19}
-# response1 = requests.post('http://localhost:8080/test',json= body111)
-# print(response1.text)
-
